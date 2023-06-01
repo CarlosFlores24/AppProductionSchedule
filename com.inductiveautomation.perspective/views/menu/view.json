@@ -1,0 +1,156 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 656,
+      "width": 889
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Space_0"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-around",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": 84
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Label"
+            },
+            "position": {
+              "basis": "50px"
+            },
+            "props": {
+              "style": {
+                "fontFamily": "Arial",
+                "fontSize": 36
+              },
+              "text": "Please select an option"
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "name": "Prompt"
+        },
+        "position": {
+          "basis": 50
+        },
+        "props": {
+          "alignItems": "flex-start",
+          "direction": "column",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": 84
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Space_1"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-around",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": 84
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "btnVisualizar"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#377c2b",
+                "paddingBottom": 30,
+                "paddingLeft": 20,
+                "paddingRight": 20,
+                "paddingTop": 30
+              },
+              "text": "Visualizar Datos",
+              "textStyle": {
+                "fontFamily": "Arial",
+                "fontSize": 24,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "meta": {
+              "name": "btnEditarDatos"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#377c2b",
+                "paddingBottom": 30,
+                "paddingLeft": 20,
+                "paddingRight": 20,
+                "paddingTop": 30
+              },
+              "text": "Editar Datos",
+              "textStyle": {
+                "fontFamily": "Arial",
+                "fontSize": 24,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "alignItems": "center",
+          "justify": "space-around",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": 84
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

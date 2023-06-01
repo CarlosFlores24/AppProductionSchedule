@@ -1,0 +1,215 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 855,
+      "width": 1246
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Space_0"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Space_0"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "Image"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "fit": {
+                        "mode": "contain"
+                      },
+                      "source": "/system/images/JohnDeere/deere.png"
+                    },
+                    "type": "ia.display.image"
+                  },
+                  {
+                    "meta": {
+                      "name": "Label"
+                    },
+                    "position": {
+                      "grow": 2
+                    },
+                    "props": {
+                      "style": {
+                        "color": "#377c2b",
+                        "fontFamily": "Arial",
+                        "fontSize": 43,
+                        "fontWeight": "bold",
+                        "textAlign": "center"
+                      },
+                      "text": "Factory Scheduling"
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "name": "FlexContainer"
+                    },
+                    "position": {
+                      "basis": "200px",
+                      "grow": 1
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "Header"
+                },
+                "position": {
+                  "basis": "120px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFFFFF",
+                    "overflow": "hidden"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Banner_0"
+                },
+                "position": {
+                  "basis": "20px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#377c2b"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Banner_1"
+                },
+                "position": {
+                  "basis": "10px"
+                },
+                "props": {
+                  "style": {
+                    "backgroundColor": "#FFDD00"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "Space_0"
+                },
+                "position": {
+                  "basis": "10px"
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "space-around",
+                  "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 84
+                  },
+                  "wrap": "wrap"
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "meta": {
+                  "name": "EmbeddedView"
+                },
+                "position": {
+                  "basis": "320px",
+                  "grow": 1
+                },
+                "props": {
+                  "path": "factories"
+                },
+                "type": "ia.display.view"
+              }
+            ],
+            "meta": {
+              "name": "Content"
+            },
+            "position": {
+              "basis": "200px",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column"
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "meta": {
+              "name": "Space_1"
+            },
+            "position": {
+              "basis": "10px"
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Space_1"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onFocus": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\u0027refreshTable\u0027)"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

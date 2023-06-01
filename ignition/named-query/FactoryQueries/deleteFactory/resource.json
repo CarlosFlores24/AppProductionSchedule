@@ -1,0 +1,40 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "SQLServer",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "ce616b8975a04bc8b627ee37800411f3bed1bb4b409b80aeaacf8113e1adee6f",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "CarlosFloresA1",
+      "timestamp": "2023-05-29T17:44:55Z"
+    },
+    "parameters": [
+      {
+        "type": "Parameter",
+        "identifier": "factoryID",
+        "sqlType": 2
+      }
+    ]
+  }
+}

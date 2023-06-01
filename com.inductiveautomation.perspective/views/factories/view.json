@@ -1,0 +1,343 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 908,
+      "width": 1172
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "SearchIcon"
+                },
+                "position": {
+                  "basis": "36px",
+                  "shrink": 0
+                },
+                "props": {
+                  "path": "material/search",
+                  "style": {
+                    "marginLeft": 10
+                  }
+                },
+                "type": "ia.display.icon"
+              },
+              {
+                "events": {
+                  "dom": {
+                    "onKeyPress": {
+                      "config": {
+                        "script": "\tsystem.perspective.sendMessage(\u0027searchRequest\u0027)"
+                      },
+                      "scope": "G",
+                      "stopPropagation": true,
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "name": "txtSearchBar"
+                },
+                "position": {
+                  "basis": "60%"
+                },
+                "propConfig": {
+                  "props.text": {
+                    "onChange": {
+                      "enabled": false,
+                      "script": "\tsystem.perspective.sendMessage(\u0027searchRequest\u0027, payload \u003d { \u0027name\u0027 : currentValue.value })"
+                    }
+                  }
+                },
+                "props": {
+                  "deferUpdates": false,
+                  "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 18,
+                    "margin": 10,
+                    "padding": 8
+                  }
+                },
+                "type": "ia.input.text-field"
+              }
+            ],
+            "meta": {
+              "name": "SearchBar"
+            },
+            "position": {
+              "basis": "100px",
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "center",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "children": [
+              {
+                "meta": {
+                  "name": "Label"
+                },
+                "position": {
+                  "basis": "50px"
+                },
+                "props": {
+                  "style": {
+                    "fontFamily": "Arial",
+                    "fontSize": 24,
+                    "paddingBottom": 10,
+                    "paddingLeft": 10,
+                    "paddingRight": 10,
+                    "paddingTop": 10
+                  },
+                  "text": "Factories:"
+                },
+                "type": "ia.display.label"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "name": "edit"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "path": "material/edit",
+                      "style": {
+                        "marginBottom": 10,
+                        "marginLeft": 10,
+                        "marginRight": 10,
+                        "marginTop": 10
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tsystem.perspective.openPopup(\u0027inputReq\u0027, \u0027inputPopup\u0027, title \u003d \u0027Agregar una Fabrica\u0027)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "add"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "path": "material/add_box",
+                      "style": {
+                        "marginBottom": 10,
+                        "marginLeft": 10,
+                        "marginRight": 10,
+                        "marginTop": 10
+                      }
+                    },
+                    "type": "ia.display.icon"
+                  },
+                  {
+                    "custom": {
+                      "selectedRow": {
+                        "FactoryID": 28,
+                        "FactoryName": "U9"
+                      }
+                    },
+                    "events": {
+                      "dom": {
+                        "onClick": {
+                          "config": {
+                            "script": "\tsystem.perspective.sendMessage(\u0027deleteRequest\u0027, self.custom.selectedRow)"
+                          },
+                          "scope": "G",
+                          "type": "script"
+                        }
+                      }
+                    },
+                    "meta": {
+                      "name": "delete"
+                    },
+                    "position": {
+                      "basis": "40px"
+                    },
+                    "props": {
+                      "path": "material/delete",
+                      "style": {
+                        "marginBottom": 10,
+                        "marginLeft": 10,
+                        "marginRight": 10,
+                        "marginTop": 10
+                      }
+                    },
+                    "scripts": {
+                      "customMethods": [],
+                      "extensionFunctions": null,
+                      "messageHandlers": [
+                        {
+                          "messageType": "selectionChange",
+                          "pageScope": true,
+                          "script": "\tself.custom.selectedRow \u003d payload",
+                          "sessionScope": true,
+                          "viewScope": true
+                        }
+                      ]
+                    },
+                    "type": "ia.display.icon"
+                  }
+                ],
+                "meta": {
+                  "name": "Buttons"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "props": {
+                  "alignItems": "center",
+                  "justify": "flex-end"
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "ActionBar"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "alignItems": "flex-end",
+              "style": {
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          },
+          {
+            "custom": {
+              "selectedRowID": "value"
+            },
+            "events": {
+              "component": {
+                "onRowClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.sendMessage(\u0027selectionChange\u0027, {\n\t\t\u0027FactoryID\u0027: event.value.FactoryID,\n\t\t\u0027FactoryName\u0027: event.value.FactoryName\n\t})\n\tsystem.perspective.sendMessage(\u0027refreshTable\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                },
+                "onSelectionChange": {
+                  "config": {
+                    "script": "\t\u0027\u0027\u0027\n\tif event.selectedRow \u003d\u003d -1:\n\t\treturn\n\t\n\tselectedRow \u003d event.selectedRow \u003e\u003e 4\n\trowData \u003d event.data[selectedRow]\n\t\n\tsystem.perspective.sendMessage(\u0027selectionChange\u0027, {\n\t\t\u0027FactoryID\u0027: rowData.FactoryID,\n\t\t\u0027FactoryName\u0027: rowData.FactoryName\n\t})\n\tsystem.perspective.sendMessage(\u0027refreshTable\u0027)\n\t\u0027\u0027\u0027\n\t\u0027\u0027\u0027\n\tsystem.db.runNamedQuery(\u0027FactoryQueries/deleteFactory\u0027, {\n\t\t\u0027factoryID\u0027 : rowID\n\t})\n\t\u0027\u0027\u0027"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "tblFactories"
+            },
+            "position": {
+              "basis": "400px",
+              "grow": 1
+            },
+            "propConfig": {
+              "props.data": {
+                "binding": {
+                  "config": {
+                    "parameters": {
+                      "factoryName": "{../SearchBar/txtSearchBar.props.text}"
+                    },
+                    "queryPath": "FactoryQueries/searchFactories"
+                  },
+                  "type": "query"
+                }
+              }
+            },
+            "props": {
+              "dragOrderable": false,
+              "emptyMessage": {
+                "noData": {
+                  "text": "No se encontraron registros con ese nombre"
+                }
+              },
+              "pager": {
+                "bottom": false
+              }
+            },
+            "scripts": {
+              "customMethods": [],
+              "extensionFunctions": null,
+              "messageHandlers": [
+                {
+                  "messageType": "searchRequest",
+                  "pageScope": true,
+                  "script": "\tself.refreshBinding(\u0027props.data\u0027)",
+                  "sessionScope": false,
+                  "viewScope": false
+                },
+                {
+                  "messageType": "refreshTable",
+                  "pageScope": true,
+                  "script": "\tself.refreshBinding(\u0027props.data\u0027)",
+                  "sessionScope": true,
+                  "viewScope": true
+                },
+                {
+                  "messageType": "deleteRequest",
+                  "pageScope": true,
+                  "script": "\t#self.props.selection.selectedRow\n\t\n\tsystem.db.runNamedQuery(\u0027FactoryQueries/deleteFactory\u0027, {\n\t\t\u0027factoryID\u0027: payload.FactoryID\n\t})\n\tself.refreshBinding(\u0027props.data\u0027)",
+                  "sessionScope": false,
+                  "viewScope": true
+                }
+              ]
+            },
+            "type": "ia.display.table"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "200px",
+          "grow": 1
+        },
+        "props": {
+          "alignContent": "space-between",
+          "direction": "column",
+          "justify": "center",
+          "style": {
+            "fontFamily": "Arial",
+            "fontSize": 84
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

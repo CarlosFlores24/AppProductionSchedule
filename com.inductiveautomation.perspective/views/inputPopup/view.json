@@ -1,0 +1,184 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 212,
+      "width": 466
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "Prompt"
+            },
+            "position": {
+              "basis": "50px",
+              "grow": 1
+            },
+            "props": {
+              "alignVertical": "top",
+              "style": {
+                "marginLeft": 10,
+                "marginTop": 10
+              },
+              "text": "Introuduzca el nombre:"
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "name": "txtInput"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "style": {
+                "fontSize": 14,
+                "marginBottom": 50,
+                "marginLeft": 10,
+                "marginRight": 10,
+                "marginTop": 50,
+                "padding": "4px"
+              }
+            },
+            "type": "ia.input.text-field"
+          }
+        ],
+        "meta": {
+          "name": "Content"
+        },
+        "position": {
+          "basis": "120px",
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Banner_0"
+        },
+        "position": {
+          "basis": "10px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#377c2b"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "name": "Banner_1"
+        },
+        "position": {
+          "basis": "6px"
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "#FFDD00"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "events": {
+              "dom": {
+                "onClick": {
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup(\u0027inputReq\u0027)"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnCancel"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#D01A2E",
+                "margin": 10,
+                "paddingBottom": 10,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 10
+              },
+              "text": "Cancel",
+              "textStyle": {
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.input.button"
+          },
+          {
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "config": {
+                    "script": "\tparams \u003d {\n\t\t\u0027factoryName\u0027 : self.parent.getSibling(\u0027Content\u0027).getChild(\u0027txtInput\u0027).props.text\n\t}\n\tsystem.db.runNamedQuery(\u0027FactoryQueries/addFactory\u0027, params)\n\t\n\tsystem.perspective.sendMessage(\u0027refreshTable\u0027)\n\tsystem.perspective.sendMessage(\u0027inputPopupReturn\u0027, {\n\t\t\u0027returnValue\u0027: \u0027OK\u0027,\n\t\t\u0027caller\u0027: \u0027X\u0027})\n\tsystem.perspective.closePopup(\u0027inputReq\u0027)\n\t"
+                  },
+                  "scope": "G",
+                  "type": "script"
+                }
+              }
+            },
+            "meta": {
+              "name": "btnOk"
+            },
+            "props": {
+              "style": {
+                "backgroundColor": "#377c2b",
+                "margin": 10,
+                "paddingBottom": 10,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 10
+              },
+              "text": "Ok",
+              "textStyle": {
+                "fontFamily": "Arial",
+                "fontSize": 16,
+                "textAlign": "center"
+              }
+            },
+            "type": "ia.input.button"
+          }
+        ],
+        "meta": {
+          "name": "options"
+        },
+        "position": {
+          "basis": "50px"
+        },
+        "props": {
+          "justify": "flex-end",
+          "style": {
+            "backgroundColor": "#C6C6C6"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}
